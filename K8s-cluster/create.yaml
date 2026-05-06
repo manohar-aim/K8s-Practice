@@ -1,5 +1,6 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
+
 metadata:
   name: roboshop-cluster
   region: us-east-1
@@ -9,7 +10,7 @@ managedNodeGroups:
   - name: roboshop-nginx
     instanceType: t3.medium
     desiredCapacity: 2
-    maxSize: 3
     minSize: 1
-    ssh:
-      allow: true
+    maxSize: 3
+    volumeSize: 20
+    amiFamily: AmazonLinux2
