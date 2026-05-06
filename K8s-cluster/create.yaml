@@ -1,14 +1,14 @@
-apiVersion: v1
-Kind: Clusterconfig
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
 metadata:
   name: roboshop-cluster
   region: us-east-1
   version: "1.29"
 
-manageNodeGroups:
+managedNodeGroups:
   - name: roboshop-nginx
     instanceType: t3.medium
-    desiredSize: 2
+    desiredCapacity: 2
     maxSize: 3
     minSize: 1
     ssh:
