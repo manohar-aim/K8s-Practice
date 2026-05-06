@@ -1,0 +1,15 @@
+apiVersion: v1
+Kind: Clusterconfig
+metadata:
+  name: roboshop-cluster
+  region: us-east-1
+  version: "1.29"
+
+manageNodeGroups:
+  - name: roboshop-nginx
+    instanceType: t3.medium
+    desiredSize: 2
+    maxSize: 3
+    minSize: 1
+    ssh:
+      allow: true
