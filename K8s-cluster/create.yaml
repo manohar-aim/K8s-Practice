@@ -4,13 +4,18 @@ kind: ClusterConfig
 metadata:
   name: roboshop-cluster
   region: us-east-1
-  version: "1.30"
+  version: "1.34"
+
+availabilityZones:
+  - us-east-1a
+  - us-east-1b
 
 managedNodeGroups:
-  - name: roboshop-nginx
-    amiFamily: AmazonLinux2
+  - name: roboshop-nodes
     instanceType: t3.medium
     desiredCapacity: 2
     minSize: 1
     maxSize: 3
     volumeSize: 20
+    ssh:
+      allow: true
